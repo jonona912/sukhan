@@ -1,0 +1,40 @@
+{
+  "name": "sukhan",
+  "version": "1.0.0",
+  "description": "Node.js/Express backend for a text-based social network.",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "cross-env NODE_ENV=production node server.js",
+    "dev": "cross-env NODE_ENV=development nodemon server.js",
+    "test_mode": "cross-env NODE_ENV=test nodemon server.js",
+    "test": "cross-env NODE_ENV=test node --test",
+    "test:register": "cross-env NODE_ENV=test node --test tests/register_api.test.js",
+    "test:users": "cross-env NODE_ENV=test node --test tests/usersHandler_api.test.js",
+    "test:login": "cross-env NODE_ENV=test node --test tests/login_api.test.js",
+    "test:post_model": "cross-env NODE_ENV=test node --test tests/post_model.test.js",
+    "test:post_api": "cross-env NODE_ENV=test node --test tests/post_api.test.js",
+    "test:post_api_get": "cross-env NODE_ENV=test node --test --test-name-pattern=\"GET /api/posts\" tests/post_api.test.js",
+    "test:post_api_put": "cross-env NODE_ENV=test node --test --test-name-pattern=\"PUT /api/posts\" tests/post_api.test.js",
+    "test:post_api_delete": "cross-env NODE_ENV=test node --test --test-name-pattern=\"DELETE /api/posts\" tests/post_api.test.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "cross-env": "^10.1.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-validator": "^7.3.2",
+    "jsonwebtoken": "^9.0.3",
+    "mongoose": "^8.6.1"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@stylistic/eslint-plugin": "^5.10.0",
+    "eslint": "^10.4.1",
+    "globals": "^17.6.0",
+    "nodemon": "^3.1.4",
+    "supertest": "^7.2.2"
+  }
+}

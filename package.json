@@ -1,0 +1,17 @@
+{
+  "name": "sukhan-workspace",
+  "private": true,
+  "scripts": {
+    "install:backend": "cd backend_sukhan && npm install",
+    "install:frontend": "cd frontend_sukhan && npm install",
+    "dev:backend": "cd backend_sukhan && npm run dev",
+    "dev:frontend": "cd frontend_sukhan && npm run dev",
+    "test_mode:backend": "cd backend_sukhan && npm run test_mode",
+    "build:frontend": "cd frontend_sukhan && npm run build",
+    "preview:frontend": "cd frontend_sukhan && npm run preview",
+    "dev": "concurrently --names backend,frontend --prefix-colors green,purple \"npm run test_mode:backend\" \"npm run dev:frontend\""
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
